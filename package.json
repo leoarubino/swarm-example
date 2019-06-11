@@ -1,0 +1,34 @@
+{
+  "name": "hotel-booking",
+  "version": "0.1.0",
+  "description": "test app",
+  "scripts": {
+    "start": "nodemon ./server.js --exec babel-node",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker-build": "docker build -t teststack/hotel-booking ./hotel-booking && docker build -t teststack/postgres ./postgres",
+    "docker-start": "docker stack deploy -c ./docker-compose.yml testnetwork",
+    "docker-stop": "docker stack rm testnetwork"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apollostack/apollo-starter-kit.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Javascript",
+    "GraphQL",
+    "Express",
+    "Apollo",
+    "Meteor"
+  ],
+  "author": "Jonas Helfer <jonas@helfer.email>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apollostack/apollo-starter-kit/issues"
+  },
+  "homepage": "https://github.com/apollostack/apollo-starter-kit#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "dotenv": "^4.0.0"
+  }
+}
