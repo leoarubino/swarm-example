@@ -5,11 +5,10 @@
   "scripts": {
     "start": "nodemon ./server.js --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docker-build": "docker build -t teststack/hotel-booking ./hotel-booking && docker build -t teststack/postgres ./postgres",
-    "docker-start": "docker stack deploy -c ./docker-compose.yml testnetwork",
+    "docker-build": "docker build -t teststack/postgres .",
     "docker-stop": "docker stack rm testnetwork",
-    "docker-update": "docker build -t teststack/hotel-booking ./hotel-booking && docker service update --force -d testnetwork_hotel-booking",
-    "docker-clean": "docker stack rm testnetwork && docker volume rm postgres-data"
+    "docker-clean": "docker stack rm testnetwork && docker volume rm postgres-data",
+    "docker-start": "docker stack deploy -c ./docker-compose.yml testnetwork"
   },
   "repository": {
     "type": "git",
@@ -29,8 +28,11 @@
     "url": "https://github.com/apollostack/apollo-starter-kit/issues"
   },
   "homepage": "https://github.com/apollostack/apollo-starter-kit#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "dotenv": "^4.0.0"
-  }
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "pg": "6.4.2",
+    "sequelize": "^4.26.0",
+    "sequelize-cli": "^5.3.0"
+  },
+  "devDependencies": {}
 }

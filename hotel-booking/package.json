@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "description": "test app",
   "scripts": {
-    "start": "nodemon ./server.js --exec babel-node",
+    "start": "NODE_ENV=local nodemon ./server.js --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1",
     "docker-build": "docker build -t teststack/hotel-booking .",
-    "docker-start": "docker stack deploy -c ./docker-compose.yml testnetwork",
     "docker-stop": "docker stack rm testnetwork",
     "docker-update": "docker build -t teststack/hotel-booking . && docker service update --force -d testnetwork_hotel-booking"
   },
