@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "test app",
   "scripts": {
-    "start": "nodemon ./server.js --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1",
     "docker-build": "docker build -t teststack/hotel-booking ./hotel-booking && docker build -t teststack/postgres ./postgres",
     "docker-start": "docker stack deploy -c ./docker-compose.yml testnetwork",

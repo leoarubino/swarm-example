@@ -1,3 +1,4 @@
+# Dockerfile must start with a FROM instruction. The image can be any valid image – it is especially easy to start by pulling an image from the Public Repositories.
 FROM node:8
 
 # Create app directory
@@ -15,5 +16,6 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+#The EXPOSE instruction informs Docker that the container listens on the specified network ports at runtime.
 EXPOSE 8080
 CMD [ "npm", "start" ]
